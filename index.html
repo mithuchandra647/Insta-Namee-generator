@@ -24,7 +24,6 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   text-align: center;
 }
-/* HEADER */
 .logo {
   animation: float 3s ease-in-out infinite;
 }
@@ -39,15 +38,9 @@ body {
   letter-spacing: 2px;
 }
 @keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-6px);}
+  100% {transform: translateY(0);}
 }
 .credit {
   font-size: 13px;
@@ -56,16 +49,10 @@ body {
   animation: glow 2s infinite alternate;
 }
 @keyframes glow {
-  from {
-    text-shadow: 0 0 4px rgba(46, 125, 50, 0.4);
-  }
-  to {
-    text-shadow: 0 0 12px rgba(46, 125, 50, 1);
-  }
+  from {text-shadow: 0 0 4px rgba(46,125,50,0.4);}
+  to {text-shadow: 0 0 12px rgba(46,125,50,1);}
 }
-/* FORM */
-select,
-button {
+select, button {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -96,7 +83,6 @@ button {
 </head>
 <body>
 <div class="app">
-  <!-- HEADER -->
   <div class="logo">
     <div class="logo-main">Username</div>
     <div class="logo-sub">On Insta</div>
@@ -126,32 +112,13 @@ button {
 </div>
 
 <script>
-let maleNames = [
-  "rakib",
-  "arif",
-  "sami",
-  "rahul",
-  "ayan",
-  "kabir",
-  "adnan",
-  "rayhan",
-  "sohan",
-  "tamim",
-  "hasan",
-];
+// Original names
+const maleNamesOriginal = ["rakib","arif","sami","rahul","ayan","kabir","adnan","rayhan","sohan","tamim","hasan"];
+const femaleNamesOriginal = ["saki","mim","sakina","asya","fatema","nabila","sabina","mousumi","reem","nura"];
 
-let femaleNames = [
-  "saki",
-  "mim",
-  "sakina",
-  "asya",
-  "fatema",
-  "nabila",
-  "sabina",
-  "mousumi",
-  "reem",
-  "nura",
-];
+// Separate working arrays to track used names
+let maleNames = [...maleNamesOriginal];
+let femaleNames = [...femaleNamesOriginal];
 
 let currentName = "";
 
@@ -165,13 +132,12 @@ function generateName() {
   let names = genderEl.value === "male" ? maleNames : femaleNames;
 
   if (names.length === 0) {
-    resultEl.innerText = "❌ No more names!";
+    resultEl.innerText = "❌ All names used up!";
     return;
   }
 
-  // এখানে names থেকে একটা র‍্যান্ডম name নেওয়া হবে, কিন্তু আগের থেকে remove হবে না যাতে পরেও ব্যবহার করা যায়
   let index = Math.floor(Math.random() * names.length);
-  let firstName = names[index];
+  let firstName = names.splice(index,1)[0]; // Remove used name
 
   currentName = firstName + titleEl.value;
 
