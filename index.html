@@ -126,9 +126,8 @@ button {
 </div>
 
 <script>
-let names = [
+let maleNames = [
   "rakib",
-  "sakib",
   "arif",
   "sami",
   "rahul",
@@ -141,6 +140,19 @@ let names = [
   "hasan",
 ];
 
+let femaleNames = [
+  "saki",
+  "mim",
+  "sakina",
+  "asya",
+  "fatema",
+  "nabila",
+  "sabina",
+  "mousumi",
+  "reem",
+  "nura",
+];
+
 let currentName = "";
 
 const genderEl = document.getElementById("gender");
@@ -150,15 +162,17 @@ const copyBtn = document.getElementById("copyBtn");
 const resultEl = document.getElementById("result");
 
 function generateName() {
+  let names = genderEl.value === "male" ? maleNames : femaleNames;
+
   if (names.length === 0) {
     resultEl.innerText = "❌ No more names!";
     return;
   }
 
+  // এখানে names থেকে একটা র‍্যান্ডম name নেওয়া হবে, কিন্তু আগের থেকে remove হবে না যাতে পরেও ব্যবহার করা যায়
   let index = Math.floor(Math.random() * names.length);
-  let firstName = names.splice(index, 1)[0];
+  let firstName = names[index];
 
-  // নাম + টাইটেল একসাথে underscore ছাড়াই
   currentName = firstName + titleEl.value;
 
   resultEl.innerText = currentName;
