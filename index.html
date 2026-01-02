@@ -1,132 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Username On Insta</title>
 
 <style>
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  font-family:'Segoe UI', Arial;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Arial, sans-serif;
 }
-
-/* APP CONTAINER */
-.app{
-  background:#fff;
-  width:100%;
-  max-width:380px;
-  padding:22px;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.35);
-  text-align:center;
+.app {
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
 }
-
 /* HEADER */
-.top-header{
-  margin-bottom:15px;
+.logo {
+  animation: float 3s ease-in-out infinite;
 }
-
-.logo{
-  font-size:34px;
-  font-weight:800;
-  line-height:1.1;
-  animation:float 3s ease-in-out infinite;
+.logo-main {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2e7d32;
+  text-shadow: 0 0 10px rgba(46, 125, 50, 0.7);
 }
-
-.logo-main{
-  color:#2e7d32;
-  text-shadow:0 0 12px rgba(46,125,50,.7);
+.logo-sub {
+  font-size: 18px;
+  letter-spacing: 2px;
 }
-
-.logo-sub{
-  display:block;
-  font-size:20px;
-  letter-spacing:2px;
-  color:#000;
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
-  100%{transform:translateY(0)}
+.credit {
+  font-size: 13px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  animation: glow 2s infinite alternate;
 }
-
-.credit{
-  font-size:13px;
-  margin-top:6px;
-  color:#2e7d32;
-  animation:glow 2s infinite alternate;
+@keyframes glow {
+  from {
+    text-shadow: 0 0 4px rgba(46, 125, 50, 0.4);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(46, 125, 50, 1);
+  }
 }
-
-@keyframes glow{
-  from{ text-shadow:0 0 5px rgba(46,125,50,.4);}
-  to{ text-shadow:0 0 14px rgba(46,125,50,1);}
-}
-
 /* FORM */
-select,button{
-  width:100%;
-  padding:12px;
-  margin:6px 0;
-  font-size:16px;
-  border-radius:12px;
-  border:1px solid #ccc;
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  font-size: 16px;
 }
-
-button{
-  border:none;
-  background:#2979ff;
-  color:#fff;
-  font-weight:600;
+button {
+  border: none;
+  background: #2979ff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
-
-#copyBtn{
-  display:none;
-  background:#00c853;
-  animation:pulse 1.2s infinite;
+#copyBtn {
+  display: none;
+  background: #00c853;
 }
-
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.08)}
-  100%{transform:scale(1)}
-}
-
-#result{
-  margin-top:15px;
-  padding:12px;
-  background:#f1f5ff;
-  border-radius:12px;
-  font-size:18px;
-  font-weight:bold;
-  word-break:break-all;
-}
-
-/* PC SCREEN */
-@media(min-width:900px){
-  .app{max-width:520px;}
+#result {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f1f5ff;
+  border-radius: 12px;
+  font-weight: bold;
+  word-break: break-word;
+  min-height: 40px;
 }
 </style>
 </head>
-
 <body>
-
 <div class="app">
-
   <!-- HEADER -->
-  <div class="top-header">
-    <div class="logo">
-      <span class="logo-main">Username</span>
-      <span class="logo-sub">On Insta</span>
-    </div>
-    <div class="credit">Creating by <b>PrimeMITHU ❤️</b></div>
+  <div class="logo">
+    <div class="logo-main">Username</div>
+    <div class="logo-sub">On Insta</div>
   </div>
+  <div class="credit">Creating by <b>PrimeMITHU ❤️</b></div>
 
   <!-- OPTIONS -->
   <select id="gender">
@@ -134,19 +109,9 @@ button{
     <option value="female">Female</option>
   </select>
 
-  <select id="mainTitle">
+  <select id="title">
     <option value="bannerjiroy">bannerjiroy</option>
     <option value="islamhossain">islamhossain</option>
-    <option value="chokrobortiroy">chokrobortiroy</option>
-    <option value="potoyariroy">potoyariroy</option>
-    <option value="singroy">singroy</option>
-    <option value="vermaroy">vermaroy</option>
-    <option value="chottopaddhayroy">chottopaddhayroy</option>
-  </select>
-
-  <select id="otherTitle">
-    <option value="">No Other</option>
-    <option value="bannerjiroy">bannerjiroy</option>
     <option value="chokrobortiroy">chokrobortiroy</option>
     <option value="potoyariroy">potoyariroy</option>
     <option value="vermaroy">vermaroy</option>
@@ -158,76 +123,60 @@ button{
   <button id="copyBtn" onclick="copyName()">Copy</button>
 
   <div id="result">Your username will appear here</div>
-
 </div>
 
-<!-- SOUNDS -->
-<audio id="genSound">
-  <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3">
-</audio>
-<audio id="copySound">
-  <source src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3">
-</audio>
-
 <script>
-let baseNames=[
-"arif","sami","rahul","ayan","kabir","adnan",
-"rayhan","sohan","tamim","hasan","fahim",
-"zayn","alex","leo","noah"
+let names = [
+  "rakib",
+  "sakib",
+  "arif",
+  "sami",
+  "rahul",
+  "ayan",
+  "kabir",
+  "adnan",
+  "rayhan",
+  "sohan",
+  "tamim",
+  "hasan",
 ];
 
-let currentName="";
+let currentName = "";
 
-const genderEl=document.getElementById("gender");
-const mainTitleEl=document.getElementById("mainTitle");
-const otherTitleEl=document.getElementById("otherTitle");
-const generateBtn=document.getElementById("generateBtn");
-const copyBtn=document.getElementById("copyBtn");
-const resultEl=document.getElementById("result");
+const genderEl = document.getElementById("gender");
+const titleEl = document.getElementById("title");
+const generateBtn = document.getElementById("generateBtn");
+const copyBtn = document.getElementById("copyBtn");
+const resultEl = document.getElementById("result");
 
-function generateName(){
-  if(baseNames.length===0){
-    resultEl.innerText="❌ All names used!";
+function generateName() {
+  if (names.length === 0) {
+    resultEl.innerText = "❌ No more names!";
     return;
   }
 
-  document.getElementById("genSound").play();
+  let index = Math.floor(Math.random() * names.length);
+  let firstName = names.splice(index, 1)[0];
 
-  let i=Math.floor(Math.random()*baseNames.length);
-  let name=baseNames[i];
-  baseNames.splice(i,1);
+  // নাম + টাইটেল একসাথে underscore ছাড়াই
+  currentName = firstName + titleEl.value;
 
-  let genderSurname=
-    genderEl.value==="male"
-    ? "hassoinislam"
-    : "akterbegum";
+  resultEl.innerText = currentName;
 
-  currentName=name;
-  if(mainTitleEl.value) currentName+="_"+mainTitleEl.value;
-  if(otherTitleEl.value) currentName+="_"+otherTitleEl.value;
-  currentName+="_"+genderSurname;
-
-  resultEl.innerText=currentName;
-
-  generateBtn.style.display="none";
-  copyBtn.style.display="block";
+  generateBtn.style.display = "none";
+  copyBtn.style.display = "block";
 }
 
-function copyName(){
+function copyName() {
   navigator.clipboard.writeText(currentName);
-  document.getElementById("copySound").play();
+  copyBtn.innerText = "Copied ✔";
 
-  copyBtn.innerText="Copied ✔";
-  copyBtn.style.animation="none";
-
-  setTimeout(()=>{
-    copyBtn.innerText="Copy";
-    copyBtn.style.display="none";
-    copyBtn.style.animation="pulse 1.2s infinite";
-    generateBtn.style.display="block";
-  },1200);
+  setTimeout(() => {
+    copyBtn.innerText = "Copy";
+    copyBtn.style.display = "none";
+    generateBtn.style.display = "block";
+  }, 1200);
 }
 </script>
-
 </body>
 </html>
